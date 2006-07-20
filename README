@@ -1,4 +1,24 @@
 ActsAsMostPopular
 =================
 
-Description goes here
+Makes your models feel like they are in high school again.  This plugin retrieves
+model objects with the most popular values for each column.  It adds methods of
+the form most_popular_column_name.  You can control how many results you get with
+the :limit option.  The default limit is 5.
+
+Usage
+=====
+
+class Exercise < ActiveRecord::Base
+	acts_as_most_popular
+end
+
+class YourController < ActionController::Base
+	def index
+		@popular_exercises = Exercise.most_popular_names
+	end
+end
+
+Notes
+=====
+

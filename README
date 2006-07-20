@@ -22,3 +22,4 @@ end
 Notes
 =====
 
+The most_popular_* methods take plural column names.

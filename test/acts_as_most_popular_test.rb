@@ -1,6 +1,4 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
-require 'pp'
-
 include BrownPunk::Acts::Popular
 
 class Person < ActiveRecord::Base

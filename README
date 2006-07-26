@@ -1,10 +1,9 @@
 ActsAsMostPopular
 =================
 
-Makes your models feel like they are in high school again.  This plugin retrieves
-model objects with the most popular values for each column.  It adds methods of
-the form most_popular_column_name.  You can control how many results you get with
-the :limit option.  The default limit is 5.
+Make your models feel like they are in high school again.  This plugin retrieves
+the most frequently occurring values for each column.  It adds methods of
+the form most_popular_pluralized_column_name.  You can control how many results you get with the :limit option.  The default limit is 5.
 
 Usage
 =====
@@ -23,3 +22,9 @@ Notes
 =====
 
 The most_popular_* methods take plural column names.
+
+Testing
+=======
+
+Create a database named most_popular_test or change the database name in database.yml
+in the plugin folder.  Navigate to the plugin folder and run rake.

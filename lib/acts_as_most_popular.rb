@@ -25,8 +25,8 @@ module BrownPunk
                 end
                 grouped  = find(:all).group_by { |c| c.#{column} }
                 sorted  = grouped.sort { |a,b| a[1].size<=>b[1].size }.reverse
-                Array.new(sorted.size < limit ? sorted.size : limit) { |i| sorted[i][1][0] }
-              end                
+                Array.new(sorted.size < limit ? sorted.size : limit) { |i| sorted[i][1][0].#{column} }
+              end              
             )
           end
           

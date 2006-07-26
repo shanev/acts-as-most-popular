@@ -3,7 +3,8 @@ ActsAsMostPopular
 
 Make your models feel like they are in high school again.  This plugin retrieves
 the most frequently occurring values for each column.  It adds methods of
-the form most_popular_pluralized_column_name.  You can control how many results you get with the :limit option.  The default limit is 5.
+the form most_popular_pluralized_column_name.  You can control how many results you get
+with the :limit option.  The default limit is 5.
 
 Usage
 =====

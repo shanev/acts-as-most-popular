@@ -1,0 +1,30 @@
+shane:
+    id: 1
+    name: shane
+    age: 28
+    city: chicago
+david:
+    id: 2
+    name: david
+    age: 26
+    city: chicago
+dave:
+    id: 3
+    name: dave
+    age: 27
+    city: chicago
+steve:
+    id: 4
+    name: steve
+    age: 28
+    city: new york
+isaac:
+    id: 5
+    name: isaac
+    age: 28
+    city: new york
+shanil:
+    id: 6
+    name: shanil
+    age: 25
+    city: hartford

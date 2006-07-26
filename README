@@ -22,7 +22,8 @@ end
 Notes
 =====
 
-The most_popular_* methods take plural column names.
+The most_popular_* methods take plural column names.  Take a look at the tests for more
+examples.
 
 Testing
 =======

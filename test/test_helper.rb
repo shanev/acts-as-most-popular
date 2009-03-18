@@ -1,16 +1,14 @@
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 
 require 'test/unit'
-#require File.expand_path(File.join(File.dirname(__FILE__), '../../../../config/environment.rb'))
+require File.expand_path(File.join(File.dirname(__FILE__), '../../../../config/environment.rb'))
 require 'rubygems'
-require 'active_support/breakpoint'
 require 'active_record/fixtures'
 require "#{File.dirname(__FILE__)}/../init"
 
 config = YAML::load(IO.read(File.dirname(__FILE__) + '/database.yml'))
 ActiveRecord::Base.logger = Logger.new(File.dirname(__FILE__) + "/debug.log")
-ActiveRecord::Base.establish_connection(config[ENV['DB'] || 'mysql'])
-
+ActiveRecord::Base.establish_connection(config[ENV['DB'] || 'sqlite3'])
 load(File.dirname(__FILE__) + "/schema.rb")
 
 Test::Unit::TestCase.fixture_path = File.dirname(__FILE__) + "/fixtures/"
@@ -32,4 +30,5 @@ class Test::Unit::TestCase #:nodoc:
   self.use_instantiated_fixtures  = false
 
   # Add more helper methods to be used by all tests here...
+
 end

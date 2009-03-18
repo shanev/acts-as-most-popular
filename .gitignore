@@ -1,0 +1,4 @@
+rdoc
+*.db
+test/*.db
+test/*.log

@@ -1,0 +1,75 @@
+==ActsAsMostPopular
+
+Make your models feel like they are in high school again.  This plugin retrieves
+the most frequently occurring values for each column.  It adds methods of
+the form most_popular_pluralized_column_name.  You can control how many results you get
+with the :limit option.  The default limit is 5.
+
+==Usage
+
+Use the macro within your ActiveRecord model
+
+  class Topic < ActiveRecord::Base
+	acts_as_most_popular
+  end
+
+Then query any of your models using the new finder methods
+
+  topics = Topic.most_popular_names
+  
+By default, the finder methods return an array containing the values for the column
+
+  ["being a ninja", "skydiving", "programming", "kayaking", "being a pirate"]
+
+===Using Frequency
+
+If you wish to retrieve the counts from the results as well, you can do so by appending the
+<tt>:frequency => true</tt> option to the finder.
+
+  topics = Topic.most_popular_names(:frequency => true)
+  
+Instead of a flat array, the finder will return a collection of results
+
+  topics.first.name
+  "being a ninja"
+  topics.first.frequency
+  "255"
+  
+=== Least Popular
+Sometimes it helps to find the least popular records. Adding this to your model is just as easy.
+
+Use the macro within your ActiveRecord model
+
+  class Topic < ActiveRecord::Base
+	acts_as_least_popular
+  end
+
+Then query any of your models using the new finder methods
+
+  users = User.least_popular_first_names
+  users = User.least_popular_first_names(:frequency => true)
+  
+==Notes
+
+The most_popular_* methods take plural column names.  Take a look at the tests for more
+examples.
+
+==Testing
+
+Create a database named most_popular_test or change the database name in database.yml
+in the plugin folder.  Navigate to the plugin folder and run rake.
+
+At the current time, tests only run correctly if the plugin resides within a Rails application.
+
+==Changes
+March 18th, 2009
+ * (Brian Hogan) - under large databsets, the plugin performs horribly. Replaced Ruby logic with database logic and improved performance dramatically.
+ * (Brian Hogan) - Added Chris Johnson's least_popular routines
+ * (Brian Hogan) - Fixed tests to run properly from within a Rails app
+ * (Brian Hogan) - Removed unnecessary loading of empty modules
+ * (Brian Hogan) - new tests to support frequency feature
+
+
+==Credits
+Improved performance and support for 'least popular' finders by Brian Hogan and Chris Johnson
+Original work copyright (c) 2006 Shane Vitarana. Distributed under the MIT License.
